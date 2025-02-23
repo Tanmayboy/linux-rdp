@@ -5,10 +5,10 @@
   },
   "exported_at": 1708687561,
   "name": "Linux RDP",
-  "author": "YourName",
+  "author": "Tanmay",
   "description": "A Linux-based RDP server with a lightweight desktop environment.",
   "image": "ubuntu:latest",
-  "startup": "/start-rdp.sh",
+  "startup": "https://github.com/Tanmayboy/linux-rdp/start-rdp.sh",
   "config": {
     "files": {},
     "startup": {
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "installation": {
-      "script": "curl -o install-rdp.sh https://raw.githubusercontent.com/yourusername/pterodactyl-linux-rdp-egg/main/install-rdp.sh && bash install-rdp.sh",
+      "script": "curl -o install-rdp.sh https://raw.githubusercontent.com/Tanmayboy/linux-rdp/main/install-rdp.sh && bash install-rdp.sh",
       "container": "ubuntu:latest",
       "entrypoint": "bash"
     }
