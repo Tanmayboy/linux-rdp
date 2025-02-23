@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": 1708687561,
+  "name": "Linux RDP",
+  "author": "YourName",
+  "description": "A Linux-based RDP server with a lightweight desktop environment.",
+  "image": "ubuntu:latest",
+  "startup": "/start-rdp.sh",
+  "config": {
+    "files": {},
+    "startup": {
+      "done": "listening for connections",
+      "userInteraction": [],
+      "container": "bash"
+    },
+    "logs": {
+      "custom": false,
+      "location": "logs/latest.log"
+    },
+    "stop": "pkill -u root"
+  },
+  "scripts": {
+    "installation": {
+      "script": "curl -o install-rdp.sh https://raw.githubusercontent.com/yourusername/pterodactyl-linux-rdp-egg/main/install-rdp.sh && bash install-rdp.sh",
+      "container": "ubuntu:latest",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "RDP Username",
+      "description": "The username for RDP login",
+      "env_variable": "RDP_USER",
+      "default_value": "user",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:20"
+    },
+    {
+      "name": "RDP Password",
+      "description": "The password for RDP login",
+      "env_variable": "RDP_PASS",
+      "default_value": "ChangeMe123!",
+      "user_viewable": false,
+      "user_editable": true,
+      "rules": "required|string|min:8"
+    }
+  ]
+    }
